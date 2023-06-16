@@ -23,6 +23,7 @@ app.post("/", async (req, res) => {
   try {
     const browser = await puppeteer.launch({
       headless: "new",
+      executablePath: "/usr/bin/chromium-browser",
     });
     const page = await browser.newPage();
     await page.setContent(htmlContent);
